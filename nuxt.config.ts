@@ -1,3 +1,5 @@
+const isDev = process.env.NODE_ENV === 'development'
+
 export default defineNuxtConfig({
   app: {
     // NUXT_APP_BASE_URL
@@ -10,6 +12,12 @@ export default defineNuxtConfig({
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
     keepalive: true
+  },
+  devtools: {
+    enabled: isDev,
+    timeline: {
+      enabled: true,
+    },
   },
   extends: 'content-wind',
   nitro: {
